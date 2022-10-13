@@ -30,4 +30,15 @@ class UsersController extends Controller
             "user" => $user,
         ]);
     }
+    
+    public function destroy($id){
+        // idの値でユーザを検索して取得
+        $user = User::findOrFail($id);
+        
+        // ユーザを削除
+        $user->delete();
+        
+        // トップページへリダイレクト
+        return redirect("/");
+    }
 }
