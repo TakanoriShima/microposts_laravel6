@@ -42,8 +42,10 @@ class UsersController extends Controller
         // idの値でユーザを検索して取得
         $user = User::findOrFail($id);
         
-        // ユーザを削除
-        $user->delete();
+        if (\Auth::id() === $user) {
+            $user->delete();
+        }
+        
         
         // トップページへリダイレクト
         return redirect("/");

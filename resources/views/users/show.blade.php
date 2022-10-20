@@ -37,8 +37,10 @@
         </div>
     </div>
     
-    {{-- ユーザ削除フォーム --}}
-    {!! Form::model($user, ["route" => ["users.destroy", $user->id], "method" => "delete"]) !!}
-        {!! Form::submit("削除", ["class" => "btn btn-danger"]) !!}
-    {!! Form::close() !!}
+    @if (Auth::id() == $user->id)
+        {{-- ユーザ削除フォーム --}}
+        {!! Form::model($user, ["route" => ["users.destroy", $user->id], "method" => "delete"]) !!}
+            {!! Form::submit("削除", ["class" => "btn btn-danger"]) !!}
+        {!! Form::close() !!}
+    @endif
 @endsection
