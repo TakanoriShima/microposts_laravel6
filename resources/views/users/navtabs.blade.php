@@ -25,10 +25,10 @@
         </a>
     </li>
     
-    {{-- "いいね"一覧タブ --}}
+    {{-- "Favorite"一覧タブ --}}
     <li class="nav-item">
         <a href="{{ route("users.favorites", ["id" => $user->id]) }}" class="nav-link {{ Request::routeIs('users.favorites') ? 'active' : '' }}">
-            いいね
+            Favorites
             <span class="badge badge-secondary">{{ $user->favorites_count }}</span>
         </a>
     </li>

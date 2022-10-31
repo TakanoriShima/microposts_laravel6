@@ -21,13 +21,13 @@
                             @if (Auth::user()->is_favorite($micropost->id))
                                 {{-- いいねを解除する --}}
                                 {!! Form::open(["route" => ["favorites.unfavorite", $micropost->id], "method" => "delete"]) !!}
-                                    {!! Form::submit("unfavorite", ["class" => "btn btn-light btn-sm"]) !!}
+                                    {!! Form::submit("Unfavorite", ["class" => "btn btn-light btn-sm"]) !!}
                                 {!! Form::close() !!}
                                 
                             @else
                                 {{-- いいね --}}
                                 {!! Form::open(["route" => ["favorites.favorite", $micropost->id]]) !!}
-                                    {!! Form::submit("favorite", ["class" => "btn btn-info btn-sm"]) !!}
+                                    {!! Form::submit("Favorite", ["class" => "btn btn-info btn-sm"]) !!}
                                 {!! Form::close() !!}
                             @endif
                         </div>
